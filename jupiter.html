@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jüpiter Turu | Interstellar Odyssey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="planet-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Exo+2:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content glass-card modal-content-large">
+            <button class="modal-close" id="bookingModalClose">&times;</button>
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <span class="section-tag">Rezervasyon</span>
+                <h3 class="section-title" style="font-size: 2rem;">Hemen <span class="gradient-text">Yerini Ayırt</span>
+                </h3>
+            </div>
+            <form id="modalBookingForm" class="booking-form" style="padding: 0;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modalFullName">Ad Soyad *</label>
+                        <input type="text" id="modalFullName" name="fullName" placeholder="Adınızı girin" required>
+                        <span class="error-message" id="modalFullNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalEmail">E-posta *</label>
+                        <input type="email" id="modalEmail" name="email" placeholder="ornek@email.com" required>
+                        <span class="error-message" id="modalEmailError"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modalPhone">Telefon</label>
+                        <input type="tel" id="modalPhone" name="phone" placeholder="+90 555 123 4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="modalDestination">Gidilecek Gezegen *</label>
+                        <select id="modalDestination" name="destination" required>
+                            <option value="">Bir destinasyon seçin</option>
+                            <option value="mars">Mars</option>
+                            <option value="jupiter">Jüpiter</option>
+                            <option value="andromeda">Andromeda</option>
+                            <option value="moon">Ay</option>
+                            <option value="saturn">Satürn</option>
+                        </select>
+                        <span class="error-message" id="modalDestinationError"></span>
+                    </div>
+                </div>
+                <div class="form-group checkbox-group" style="margin-bottom: 20px;">
+                    <input type="checkbox" id="modalTerms" name="terms" required>
+                    <label for="modalTerms">
+                        <a href="#" class="link">Kullanım koşullarını</a> kabul ediyorum. *
+                    </label>
+                    <span class="error-message" id="modalTermsError"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Rezervasyon Talebi Gönder</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-icon">🚀</div>
+            <h3>Rezervasyon Talebiniz Alındı!</h3>
+            <p>En kısa sürede sizinle iletişime geçeceğiz. Uzay maceranız başlamak üzere!</p>
+            <button class="btn btn-primary" id="modalBtn">Tamam</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Interstellar Odyssey</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="index.html#destinations">Destinasyonlar</a></li>
+                <li><a href="index.html#calculator">Hesaplayıcı</a></li>
+                <li><a href="index.html#booking">Rezervasyon</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Planet Hero -->
+    <section class="planet-hero jupiter-hero">
+        <div class="planet-hero-bg"></div>
+        <div class="planet-hero-content">
+            <span class="planet-tag">Gaz Devi</span>
+            <h1 class="planet-title">Jüpiter</h1>
+            <p class="planet-tagline">Büyük Kırmızı Leke'nin yanında hissedin fırtınanın gücünü</p>
+            <div class="planet-quick-info">
+                <div class="quick-item">
+                    <span class="quick-label">Uzaklık</span>
+                    <span class="quick-value">778 Milyon km</span>
+                </div>
+                <div class="quick-item">
+                    <span class="quick-label">Yolculuk Süresi</span>
+                    <span class="quick-value">2 Yıl</span>
+                </div>
+                <div class="quick-item">
+                    <span class="quick-label">Yerçekimi</span>
+                    <span class="quick-value">2.53g</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planet Details -->
+    <section class="planet-details">
+        <div class="container">
+            <div class="details-grid">
+                <div class="details-main">
+                    <h2>Jüpiter Hakkında</h2>
+                    <p>Jüpiter, Güneş Sistemi'nin en büyük gezegenidir. Diğer tüm gezegenlerin toplam kütlesinin iki
+                        katından fazla kütleye sahip olan bu gaz devi, yüzlerce yıldır bilim insanlarını büyülemeye
+                        devam ediyor.</p>
+
+                    <p>Gezegenin en ünlü özelliği, 400 yıldan fazladır süren devasa bir fırtına olan Büyük Kırmızı
+                        Leke'dir. Bu fırtına, Dünya'nın çapından daha geniştir ve 600 km/saat hıza ulaşan rüzgarlar
+                        içerir.</p>
+
+                    <h3>Tur Özellikleri</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-icon">🌪️</span>
+                            <div>
+                                <strong>Büyük Kırmızı Leke Gözlemi</strong>
+                                <p>Güvenli bir mesafeden devasa fırtınayı izleyin</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🌙</span>
+                            <div>
+                                <strong>Europa Keşfi</strong>
+                                <p>Buzla kaplı okyanusa sahip uyduyu ziyaret edin</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🌋</span>
+                            <div>
+                                <strong>Io Volkanları</strong>
+                                <p>Güneş Sistemi'nin en aktif volkanik uydusunu görün</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">💫</span>
+                            <div>
+                                <strong>Jüpiter Halkaları</strong>
+                                <p>Gezegen halkalarının arasından geçiş deneyimi</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3>Önemli Bilgiler</h3>
+                    <div class="info-grid">
+                        <div class="info-box">
+                            <span class="info-icon">🌡️</span>
+                            <span class="info-label">Ortalama Sıcaklık</span>
+                            <span class="info-value">-145°C</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-icon">📅</span>
+                            <span class="info-label">Bir Gün</span>
+                            <span class="info-value">9.9 Saat</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-icon">🌍</span>
+                            <span class="info-label">Çap</span>
+                            <span class="info-value">139,820 km</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-icon">🌙</span>
+                            <span class="info-label">Uydular</span>
+                            <span class="info-value">95 (Bilinen)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details-sidebar">
+                    <div class="booking-card glass-card">
+                        <h3>Tur Bilgileri</h3>
+                        <div class="price-box">
+                            <span class="price-label">Başlangıç Fiyatı</span>
+                            <span class="price-value">₺8,700,000</span>
+                            <span class="price-note">/ kişi</span>
+                        </div>
+                        <ul class="includes-list">
+                            <li>✓ Gidiş-Dönüş Uzay Yolculuğu</li>
+                            <li>✓ 60 Gün Orbital Konaklama</li>
+                            <li>✓ Europa Yüzey Turu</li>
+                            <li>✓ Io Flyby Deneyimi</li>
+                            <li>✓ Özel Gözlem Kapsülü</li>
+                            <li>✓ Premium Uzay Sigortası</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary btn-full open-booking-modal"
+                            data-planet="jupiter">Rezervasyon Yap</button>
+                        <p class="availability">Sonraki müsait tarih: <strong>Haziran 2149</strong></p>
+                    </div>
+
+                    <div class="gallery-card glass-card">
+                        <h3>Galeri</h3>
+                        <div class="gallery-grid">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Büyük Kırmızı Leke">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Europa">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Io">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Jüpiter Halkaları">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Destinations -->
+    <section class="related-destinations">
+        <div class="container">
+            <h2 class="section-title">Diğer <span class="gradient-text">Destinasyonlar</span></h2>
+            <div class="related-grid">
+                <a href="mars.html" class="related-card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Mars">
+                    <div class="related-content">
+                        <h4>Mars</h4>
+                        <span>Kızıl Gezegen</span>
+                    </div>
+                </a>
+                <a href="andromeda.html" class="related-card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Andromeda">
+                    <div class="related-content">
+                        <h4>Andromeda</h4>
+                        <span>Galaksi Turu</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2147 Interstellar Odyssey. Tüm hakları saklıdır.</p>
+                <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

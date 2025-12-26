@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezervasyon | Interstellar Odyssey</title>
+    <meta name="description" content="Yolculuğunuzu tasarlayın ve biniş kartınızı oluşturun.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <a href="index.html" class="logo animated-logo" style="text-decoration: none; cursor: pointer;">
+            <span class="word">INTERSTELLAR</span>
+            <span class="highlight word">ODYSSEY</span>
+        </a>
+    </nav>
+
+    <!-- Page Header (Spacer) -->
+    <div style="height: 120px;"></div>
+
+    <!-- Mission Control: Holo-Pass Generator -->
+    <section id="mission-control" class="container">
+        <h2 class="section-title">Holo-Pass <span class="highlight">Oluşturucu</span></h2>
+        <div class="mission-control-wrapper">
+            <!-- Configuration Panel -->
+            <div class="config-panel glass-panel">
+                <h3>Yolculuğunu Tasarla</h3>
+
+                <div class="config-group">
+                    <label>Gemi Sınıfı</label>
+                    <div class="option-grid">
+                        <label class="option-card">
+                            <input type="radio" name="ship" value="Voyager X1" checked>
+                            <span class="opt-content">
+                                <i class="fas fa-rocket"></i>
+                                <span>Voyager X1</span>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="ship" value="Odyssey Prime">
+                            <span class="opt-content">
+                                <i class="fas fa-shuttle-space"></i>
+                                <span>Odyssey Prime</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="config-group">
+                    <label>Kabin Tipi</label>
+                    <div class="option-grid">
+                        <label class="option-card">
+                            <input type="radio" name="class" value="Standart" checked>
+                            <span class="opt-content">
+                                <i class="fas fa-user-astronaut"></i>
+                                <span>Standart</span>
+                            </span>
+                        </label>
+                        <label class="option-card">
+                            <input type="radio" name="class" value="VIP Suit">
+                            <span class="opt-content">
+                                <i class="fas fa-crown"></i>
+                                <span>VIP Suit</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="config-group">
+                    <label>Yolcu Adı</label>
+                    <input type="text" id="holoName" placeholder="Adınız Soyadınız" value="GEZGİN">
+                </div>
+            </div>
+
+            <!-- 3D Holographic Ticket Preview -->
+            <div class="ticket-preview-area">
+                <div class="holo-ticket" id="holoTicket">
+                    <div class="hologram-overlay"></div>
+                    <div class="ticket-content">
+                        <div class="ticket-header">
+                            <span class="brand-small">INTERSTELLAR ODYSSEY</span>
+                            <span class="ticket-type">BOARDING PASS</span>
+                        </div>
+                        <div class="ticket-body">
+                            <div class="ticket-row">
+                                <div class="data-group">
+                                    <span class="label">YOLCU</span>
+                                    <span class="value" id="ticketName">GEZGİN</span>
+                                </div>
+                                <div class="data-group right">
+                                    <span class="label">GEMİ</span>
+                                    <span class="value" id="ticketShip">Voyager X1</span>
+                                </div>
+                            </div>
+                            <div class="ticket-row big-row">
+                                <div class="data-group">
+                                    <span class="label">KALKIŞ</span>
+                                    <span class="large-value">DÜNYA</span>
+                                </div>
+                                <div class="icon-plane">
+                                    <i class="fas fa-plane-departure"></i>
+                                </div>
+                                <div class="data-group right">
+                                    <span class="label">VARIŞ</span>
+                                    <span class="large-value">MARS</span>
+                                </div>
+                            </div>
+                            <div class="ticket-row">
+                                <div class="data-group">
+                                    <span class="label">SINIF</span>
+                                    <span class="value highlight-text" id="ticketClass">STANDART</span>
+                                </div>
+                                <div class="data-group right">
+                                    <span class="label">KAPI</span>
+                                    <span class="value">A-42</span>
+                                </div>
+                            </div>
+                            <div class="ticket-footer">
+                                <div class="barcode">||| | ||||| || |||</div>
+                                <span class="serial">ID: 8X-9921</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="preview-hint"><i class="fas fa-mouse-pointer"></i> 3D efekt için üzerimde gezdirin</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking" class="container booking-section">
+        <div class="form-container glass-panel">
+            <h2 class="section-title">Yolculuğa <span class="highlight">Katılın</span></h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="fullname">Ad Soyad</label>
+                    <input type="text" id="fullname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-posta Adresi</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="destination">Hedef Destinasyon</label>
+                    <select id="destination">
+                        <option value="mars">Mars</option>
+                        <option value="jupiter">Jüpiter</option>
+                        <option value="andromeda">Andromeda</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-glow full-width">Rezervasyonu Tamamla</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="footer-container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 20px;">
+                <p>&copy; 2050 Interstellar Odyssey. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

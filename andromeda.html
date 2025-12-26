@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andromeda Turu | Interstellar Odyssey</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="planet-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Exo+2:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content glass-card modal-content-large">
+            <button class="modal-close" id="bookingModalClose">&times;</button>
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <span class="section-tag">Rezervasyon</span>
+                <h3 class="section-title" style="font-size: 2rem;">Hemen <span class="gradient-text">Yerini Ayırt</span>
+                </h3>
+            </div>
+            <form id="modalBookingForm" class="booking-form" style="padding: 0;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modalFullName">Ad Soyad *</label>
+                        <input type="text" id="modalFullName" name="fullName" placeholder="Adınızı girin" required>
+                        <span class="error-message" id="modalFullNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalEmail">E-posta *</label>
+                        <input type="email" id="modalEmail" name="email" placeholder="ornek@email.com" required>
+                        <span class="error-message" id="modalEmailError"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modalPhone">Telefon</label>
+                        <input type="tel" id="modalPhone" name="phone" placeholder="+90 555 123 4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="modalDestination">Gidilecek Gezegen *</label>
+                        <select id="modalDestination" name="destination" required>
+                            <option value="">Bir destinasyon seçin</option>
+                            <option value="mars">Mars</option>
+                            <option value="jupiter">Jüpiter</option>
+                            <option value="andromeda">Andromeda</option>
+                            <option value="moon">Ay</option>
+                            <option value="saturn">Satürn</option>
+                        </select>
+                        <span class="error-message" id="modalDestinationError"></span>
+                    </div>
+                </div>
+                <div class="form-group checkbox-group" style="margin-bottom: 20px;">
+                    <input type="checkbox" id="modalTerms" name="terms" required>
+                    <label for="modalTerms">
+                        <a href="#" class="link">Kullanım koşullarını</a> kabul ediyorum. *
+                    </label>
+                    <span class="error-message" id="modalTermsError"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Rezervasyon Talebi Gönder</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-icon">🚀</div>
+            <h3>Rezervasyon Talebiniz Alındı!</h3>
+            <p>En kısa sürede sizinle iletişime geçeceğiz. Uzay maceranız başlamak üzere!</p>
+            <button class="btn btn-primary" id="modalBtn">Tamam</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Interstellar Odyssey</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="index.html#destinations">Destinasyonlar</a></li>
+                <li><a href="index.html#calculator">Hesaplayıcı</a></li>
+                <li><a href="index.html#booking">Rezervasyon</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Planet Hero -->
+    <section class="planet-hero andromeda-hero">
+        <div class="planet-hero-bg"></div>
+        <div class="planet-hero-content">
+            <span class="planet-tag">Galaksiler Arası</span>
+            <h1 class="planet-title">Andromeda</h1>
+            <p class="planet-tagline">2.5 milyon ışık yılı ötesine, komşu galaksimize</p>
+            <div class="planet-quick-info">
+                <div class="quick-item">
+                    <span class="quick-label">Uzaklık</span>
+                    <span class="quick-value">2.5M Işık Yılı</span>
+                </div>
+                <div class="quick-item">
+                    <span class="quick-label">Yolculuk Süresi</span>
+                    <span class="quick-value">25 Yıl*</span>
+                </div>
+                <div class="quick-item">
+                    <span class="quick-label">Teknoloji</span>
+                    <span class="quick-value">Warp Drive</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planet Details -->
+    <section class="planet-details">
+        <div class="container">
+            <div class="details-grid">
+                <div class="details-main">
+                    <h2>Andromeda Hakkında</h2>
+                    <p>Andromeda Galaksisi (M31), Samanyolu'na en yakın büyük galaksidir. Yaklaşık 1 trilyon yıldız
+                        barındıran bu sarmal galaksi, Yerel Grup'un en büyük üyesidir ve çıplak gözle görülebilen en
+                        uzak gök cismidir.</p>
+
+                    <p>Warp Drive teknolojisi sayesinde artık galaksiler arası yolculuk mümkün. Kriyojenik uyku modunda
+                        seyahat ederek, öznel olarak sadece birkaç haftalık bir yolculuk deneyimi yaşayacaksınız.</p>
+
+                    <div class="warning-box">
+                        <span class="warning-icon">⚠️</span>
+                        <div>
+                            <strong>Önemli Not</strong>
+                            <p>* Warp Drive teknolojisi ile seyahat süresi öznel olarak 25 yıl, Dünya zamanına göre ise
+                                binlerce yıl sürer. Bu tur tek yönlü olup, yolcuların Dünya'ya dönüş garantisi
+                                bulunmamaktadır.</p>
+                        </div>
+                    </div>
+
+                    <h3>Tur Özellikleri</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-icon">🌌</span>
+                            <div>
+                                <strong>Galaktik Merkez Turu</strong>
+                                <p>Andromeda'nın süper kütleli kara deliğini güvenli mesafeden izleyin</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">⭐</span>
+                            <div>
+                                <strong>Yıldız Oluşum Bölgeleri</strong>
+                                <p>Yeni yıldızların doğuşuna tanık olun</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🪐</span>
+                            <div>
+                                <strong>Egzogezegen Keşfi</strong>
+                                <p>Potansiyel yaşanabilir gezegenleri ziyaret edin</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="feature-icon">🛸</span>
+                            <div>
+                                <strong>İlk Temas Protokolü</strong>
+                                <p>Olası uzaylı yaşam formları için hazırlık eğitimi</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <h3>Galaksi Bilgileri</h3>
+                    <div class="info-grid">
+                        <div class="info-box">
+                            <span class="info-icon">⭐</span>
+                            <span class="info-label">Yıldız Sayısı</span>
+                            <span class="info-value">~1 Trilyon</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-icon">📐</span>
+                            <span class="info-label">Çap</span>
+                            <span class="info-value">220,000 Işık Yılı</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-icon">🌀</span>
+                            <span class="info-label">Tip</span>
+                            <span class="info-value">Sarmal Galaksi</span>
+                        </div>
+                        <div class="info-box">
+                            <span class="info-icon">🛰️</span>
+                            <span class="info-label">Uydu Galaksiler</span>
+                            <span class="info-value">14+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details-sidebar">
+                    <div class="booking-card glass-card premium-card">
+                        <span class="premium-badge">Premium Deneyim</span>
+                        <h3>Tur Bilgileri</h3>
+                        <div class="price-box">
+                            <span class="price-label">Başlangıç Fiyatı</span>
+                            <span class="price-value">₺150,000,000</span>
+                            <span class="price-note">/ kişi</span>
+                        </div>
+                        <ul class="includes-list">
+                            <li>✓ Tek Yönlü Galaksi Yolculuğu</li>
+                            <li>✓ Warp Drive Uzay Gemisi</li>
+                            <li>✓ Kriyojenik Uyku Kabini</li>
+                            <li>✓ Ömür Boyu Andromeda Vatandaşlığı</li>
+                            <li>✓ Kolonizasyon Hakları</li>
+                            <li>✓ Galaktik Sigorta</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary btn-full open-booking-modal"
+                            data-planet="andromeda">Başvuru Yap</button>
+                        <p class="availability">Sınırlı kontenjan: <strong>100 Kişi</strong></p>
+                    </div>
+
+                    <div class="gallery-card glass-card">
+                        <h3>Galeri</h3>
+                        <div class="gallery-grid">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Galaktik Merkez">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Yıldız Oluşumu">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Egzogezegen">
+                            <img src="/placeholder.svg?height=150&width=150" alt="Warp Drive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Destinations -->
+    <section class="related-destinations">
+        <div class="container">
+            <h2 class="section-title">Diğer <span class="gradient-text">Destinasyonlar</span></h2>
+            <div class="related-grid">
+                <a href="mars.html" class="related-card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Mars">
+                    <div class="related-content">
+                        <h4>Mars</h4>
+                        <span>Kızıl Gezegen</span>
+                    </div>
+                </a>
+                <a href="jupiter.html" class="related-card">
+                    <img src="/placeholder.svg?height=200&width=300" alt="Jüpiter">
+                    <div class="related-content">
+                        <h4>Jüpiter</h4>
+                        <span>Gaz Devi</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2147 Interstellar Odyssey. Tüm hakları saklıdır.</p>
+                <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

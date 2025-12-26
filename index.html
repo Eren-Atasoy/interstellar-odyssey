@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interstellar Odyssey | Uzay Seyahat Acentesi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;900&family=Exo+2:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Interstellar Odyssey</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Ana Sayfa</a></li>
+                <li><a href="#destinations">Destinasyonlar</a></li>
+                <li><a href="#calculator">Hesaplayıcı</a></li>
+                <li><a href="#booking">Rezervasyon</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
+        <div class="stars"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Evrenin Sınırlarını</span>
+                <span class="title-line gradient-text">Keşfedin</span>
+            </h1>
+            <p class="hero-subtitle">Mars'tan Andromeda'ya, hayalinizdeki uzay macerasına hazır olun. Geleceğin
+                teknolojisiyle donatılmış uzay gemilerimizle unutulmaz bir yolculuğa çıkın.</p>
+            <div class="hero-buttons">
+                <a href="#booking" class="btn btn-primary">
+                    <span>Hemen Rezervasyon Yap</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="#destinations" class="btn btn-secondary">
+                    <span>Destinasyonları Keşfet</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Mutlu Yolcu</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Gezegen</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">99.9%</span>
+                    <span class="stat-label">Güvenlik</span>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Destinations Section -->
+    <section id="destinations" class="destinations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Destinasyonlar</span>
+                <h2 class="section-title">Efsanevi <span class="gradient-text">Gezegenler</span></h2>
+                <p class="section-subtitle">Evrenin en büyüleyici köşelerini keşfetmeye hazır mısınız?</p>
+            </div>
+            <div class="destinations-grid">
+                <!-- Mars Card -->
+                <div class="destination-card" data-planet="mars">
+                    <div class="card-image">
+                        <img src="assets/images/mars_card.png" alt="Mars">
+                        <div class="card-overlay"></div>
+                        <span class="card-badge">Popüler</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Mars</h3>
+                        <p class="card-description">Kızıl gezegeni keşfedin. Olympus Mons'a tırmanın, Valles Marineris
+                            kanyonlarını görün.</p>
+                        <div class="card-info">
+                            <div class="info-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                                <span>7 Ay</span>
+                            </div>
+                            <div class="info-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2a10 10 0 1 0 10 10" />
+                                    <path d="M12 8v4l2 2" />
+                                </svg>
+                                <span>-63°C</span>
+                            </div>
+                            <div class="info-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2v20M2 12h20" />
+                                </svg>
+                                <span>0.38g</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-price">₺2.5M'den başlayan</span>
+                            <a href="mars.html" class="btn btn-small">Detayları Gör</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jupiter Card -->
+                <div class="destination-card" data-planet="jupiter">
+                    <div class="card-image">
+                        <img src="assets/images/jupiter_card.png" alt="Jupiter">
+                        <div class="card-overlay"></div>
+                        <span class="card-badge featured">Öne Çıkan</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Jüpiter</h3>
+                        <p class="card-description">Güneş sisteminin devi. Büyük Kırmızı Leke'yi yakından izleyin, 79
+                            uyduyu keşfedin.</p>
+                        <div class="card-info">
+                            <div class="info-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                                <span>2 Yıl</span>
+                            </div>
+                            <div class="info-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2a10 10 0 1 0 10 10" />
+                                    <path d="M12 8v4l2 2" />
+                                </svg>
+                                <span>-145°C</span>
+                            </div>
+                            <div class="info-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2v20M2 12h20" />
+                                </svg>
+                                <span>2.53g</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-price">₺8.7M'den başlayan</span>
+                            <a href="jupiter.html" class="btn btn-small">Detayları Gör</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Andromeda Card -->
+                <div class="destination-card" data-planet="andromeda">
+                    <div class="card-image">
+                        <img src="assets/images/andromeda_card.png" alt="Andromeda">
+                        <div class="card-overlay"></div>
+                        <span class="card-badge premium">Premium</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Andromeda</h3>
+                        <p class="card-description">Galaksiler arası yolculuk. 2.5 milyon ışık yılı ötedeki komşu
+                            galaksimizi ziyaret edin.</p>
+                        <div class="card-info">
+                            <div class="info-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M12 6v6l4 2" />
+                                </svg>
+                                <span>25 Yıl*</span>
+                            </div>
+                            <div class="info-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2a10 10 0 1 0 10 10" />
+                                    <path d="M12 8v4l2 2" />
+                                </svg>
+                                <span>Değişken</span>
+                            </div>
+                            <div class="info-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2v20M2 12h20" />
+                                </svg>
+                                <span>Değişken</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="card-price">₺150M'den başlayan</span>
+                            <a href="andromeda.html" class="btn btn-small">Detayları Gör</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weight Calculator Section -->
+    <section id="calculator" class="calculator">
+        <div class="container">
+            <div class="calculator-wrapper">
+                <div class="calculator-info">
+                    <span class="section-tag">İnteraktif Araç</span>
+                    <h2 class="section-title">Gezegen <span class="gradient-text">Ağırlık Hesaplayıcı</span></h2>
+                    <p class="section-subtitle">Farklı gezegenlerdeki ağırlığınızı merak ediyor musunuz? Dünyadaki
+                        kilonuzu girin ve seçtiğiniz gezegendeki ağırlığınızı öğrenin!</p>
+                    <div class="gravity-info">
+                        <h4>Yerçekimi Katsayıları:</h4>
+                        <ul>
+                            <li><span class="planet-dot mars"></span>Mars: 0.38g</li>
+                            <li><span class="planet-dot jupiter"></span>Jüpiter: 2.53g</li>
+                            <li><span class="planet-dot moon"></span>Ay: 0.16g</li>
+                            <li><span class="planet-dot venus"></span>Venüs: 0.91g</li>
+                            <li><span class="planet-dot saturn"></span>Satürn: 1.07g</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="calculator-card glass-card">
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label for="earthWeight">Dünyadaki Kilonuz (kg)</label>
+                            <input type="number" id="earthWeight" placeholder="70" min="1" max="500">
+                        </div>
+                        <div class="form-group">
+                            <label for="planetSelect">Gezegen Seçin</label>
+                            <select id="planetSelect">
+                                <option value="">Bir gezegen seçin</option>
+                                <option value="0.38">Mars</option>
+                                <option value="2.53">Jüpiter</option>
+                                <option value="0.16">Ay</option>
+                                <option value="0.91">Venüs</option>
+                                <option value="1.07">Satürn</option>
+                                <option value="0.93">Uranüs</option>
+                                <option value="1.14">Neptün</option>
+                                <option value="0.06">Plüton</option>
+                            </select>
+                        </div>
+                        <button type="button" id="calculateBtn" class="btn btn-primary btn-full">
+                            <span>Hesapla</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16v16H4z" />
+                                <path d="M8 8h2v2H8zM14 8h2v2h-2zM8 14h2v2H8zM14 14h2v2h-2z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="calculator-result" id="calculatorResult">
+                        <div class="result-icon">⚖️</div>
+                        <p class="result-text">Sonuç burada görünecek</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Rezervasyon</span>
+                <h2 class="section-title">Yolculuğunuzu <span class="gradient-text">Planlayın</span></h2>
+                <p class="section-subtitle">Hayalinizdeki uzay macerasını gerçeğe dönüştürün. Formu doldurun, sizinle
+                    iletişime geçelim.</p>
+            </div>
+            <div class="booking-wrapper">
+                <form id="bookingForm" class="booking-form glass-card">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Ad Soyad *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Adınızı girin" required>
+                            <span class="error-message" id="fullNameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-posta *</label>
+                            <input type="email" id="email" name="email" placeholder="ornek@email.com" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+90 555 123 4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Gidilecek Gezegen *</label>
+                            <select id="destination" name="destination" required>
+                                <option value="">Bir destinasyon seçin</option>
+                                <option value="mars">Mars - Kızıl Gezegen</option>
+                                <option value="jupiter">Jüpiter - Gaz Devi</option>
+                                <option value="andromeda">Andromeda - Galaksi Turu</option>
+                                <option value="moon">Ay - Başlangıç Turu</option>
+                                <option value="saturn">Satürn - Halka Turu</option>
+                            </select>
+                            <span class="error-message" id="destinationError"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="travelDate">Tercih Edilen Tarih</label>
+                            <input type="date" id="travelDate" name="travelDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers">Yolcu Sayısı</label>
+                            <select id="passengers" name="passengers">
+                                <option value="1">1 Yolcu</option>
+                                <option value="2">2 Yolcu</option>
+                                <option value="3">3 Yolcu</option>
+                                <option value="4">4 Yolcu</option>
+                                <option value="5+">5+ Yolcu (Grup)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Özel İstekler</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Varsa özel isteklerinizi belirtin..."></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">
+                            <a href="#" class="link">Kullanım koşullarını</a> ve <a href="#" class="link">gizlilik
+                                politikasını</a> kabul ediyorum. *
+                        </label>
+                        <span class="error-message" id="termsError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span>Rezervasyon Talebi Gönder</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                        </svg>
+                    </button>
+                </form>
+                <div class="booking-info">
+                    <div class="info-card glass-card">
+                        <div class="info-icon">📞</div>
+                        <h4>7/24 Destek</h4>
+                        <p>Sorularınız için her zaman buradayız</p>
+                        <a href="tel:+908501234567">+90 850 123 45 67</a>
+                    </div>
+                    <div class="info-card glass-card">
+                        <div class="info-icon">✉️</div>
+                        <h4>E-posta</h4>
+                        <p>Detaylı bilgi için yazın</p>
+                        <a href="mailto:info@interstellar.com">info@interstellar.com</a>
+                    </div>
+                    <div class="info-card glass-card">
+                        <div class="info-icon">🛡️</div>
+                        <h4>Güvenli Ödeme</h4>
+                        <p>256-bit SSL şifreli işlemler</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content glass-card modal-content-large">
+            <button class="modal-close" id="bookingModalClose">&times;</button>
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <span class="section-tag">Rezervasyon</span>
+                <h3 class="section-title" style="font-size: 2rem;">Hemen <span class="gradient-text">Yerini Ayırt</span>
+                </h3>
+            </div>
+            <form id="modalBookingForm" class="booking-form" style="padding: 0;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modalFullName">Ad Soyad *</label>
+                        <input type="text" id="modalFullName" name="fullName" placeholder="Adınızı girin" required>
+                        <span class="error-message" id="modalFullNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="modalEmail">E-posta *</label>
+                        <input type="email" id="modalEmail" name="email" placeholder="ornek@email.com" required>
+                        <span class="error-message" id="modalEmailError"></span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="modalPhone">Telefon</label>
+                        <input type="tel" id="modalPhone" name="phone" placeholder="+90 555 123 4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="modalDestination">Gidilecek Gezegen *</label>
+                        <select id="modalDestination" name="destination" required>
+                            <option value="">Bir destinasyon seçin</option>
+                            <option value="mars">Mars</option>
+                            <option value="jupiter">Jüpiter</option>
+                            <option value="andromeda">Andromeda</option>
+                            <option value="moon">Ay</option>
+                            <option value="saturn">Satürn</option>
+                        </select>
+                        <span class="error-message" id="modalDestinationError"></span>
+                    </div>
+                </div>
+                <div class="form-group checkbox-group" style="margin-bottom: 20px;">
+                    <input type="checkbox" id="modalTerms" name="terms" required>
+                    <label for="modalTerms">
+                        <a href="#" class="link">Kullanım koşullarını</a> kabul ediyorum. *
+                    </label>
+                    <span class="error-message" id="modalTermsError"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Rezervasyon Talebi Gönder</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-icon">🚀</div>
+            <h3>Rezervasyon Talebiniz Alındı!</h3>
+            <p>En kısa sürede sizinle iletişime geçeceğiz. Uzay maceranız başlamak üzere!</p>
+            <button class="btn btn-primary" id="modalBtn">Tamam</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">Interstellar Odyssey</span>
+                    </a>
+                    <p>Evrenin sınırlarını keşfedin. 2147'den bu yana güvenilir uzay seyahati.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <circle cx="18" cy="6" r="1" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="#hero">Ana Sayfa</a></li>
+                        <li><a href="#destinations">Destinasyonlar</a></li>
+                        <li><a href="#calculator">Hesaplayıcı</a></li>
+                        <li><a href="#booking">Rezervasyon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Destinasyonlar</h4>
+                    <ul>
+                        <li><a href="mars.html">Mars Turu</a></li>
+                        <li><a href="jupiter.html">Jüpiter Turu</a></li>
+                        <li><a href="andromeda.html">Andromeda Turu</a></li>
+                        <li><a href="#">Ay Turu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Destek</h4>
+                    <ul>
+                        <li><a href="#">SSS</a></li>
+                        <li><a href="#">İletişim</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">Kullanım Koşulları</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2147 Interstellar Odyssey. Tüm hakları saklıdır. | Dünya'dan evrenin derinliklerine.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

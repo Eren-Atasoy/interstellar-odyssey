@@ -1,0 +1,956 @@
+/* Global Reset & Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #05070a;
+    --neon-blue: #00f2ff;
+    --galactic-purple: #bc13fe;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-white: #ffffff;
+    --text-gray: #a0a0a0;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Background Animation Placeholder - Can be replaced strictly by image or CSS stars */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%);
+    z-index: -2;
+}
+
+/* Typography & Utilities */
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.highlight {
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, var(--neon-blue), var(--galactic-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary,
+.btn-glow {
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: transparent;
+    border: 1px solid var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+.btn-primary:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.btn-glow {
+    background: linear-gradient(45deg, var(--neon-blue), var(--galactic-purple));
+    color: white;
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.4);
+}
+
+.btn-glow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid var(--glass-border);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Glassmorphism Classes */
+.glass-nav,
+.glass-card,
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Navigation */
+/* Navigation */
+/* Navigation */
+.glass-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* Center since only logo is present */
+    align-items: center;
+    padding: 30px 50px;
+    z-index: 1000;
+
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    /* transition: opacity 0.5s ease;  Removing this to avoid hiding the whole nav if we only want the logo hidden */
+}
+
+.logo-hidden {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.logo-visible {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Animated Logo */
+.animated-logo {
+    display: flex;
+    gap: 15px;
+    font-weight: 900;
+    cursor: default;
+}
+
+.animated-logo .word {
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(90deg, #fff, #00f2ff, #fff);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links a:not(.btn-primary) {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:not(.btn-primary)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--neon-blue);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:not(.btn-primary):hover {
+    color: white;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.nav-links a:not(.btn-primary):hover::after {
+    width: 100%;
+}
+
+/* Update Primary Button in Nav for consistency */
+.nav-links .btn-primary {
+    border-radius: 50px;
+    padding: 10px 30px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    background: rgba(0, 242, 255, 0.05);
+}
+
+.nav-links .btn-primary:hover {
+    background: var(--neon-blue);
+    color: black;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+    border-color: var(--neon-blue);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('assets/images/hero_bg.png') no-repeat center center/cover;
+    position: relative;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, var(--bg-dark) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Destinations Grid */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content h3 {
+    margin-bottom: 10px;
+    color: var(--neon-blue);
+}
+
+.card-content p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+/* Calculator Section */
+.calculator-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.calc-interface {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.input-group,
+.select-group {
+    text-align: left;
+}
+
+.input-group label,
+.select-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--neon-blue);
+}
+
+.input-group input,
+.select-group select {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--neon-blue);
+    padding: 12px;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    width: 200px;
+    outline: none;
+}
+
+.input-group input:focus,
+.select-group select:focus {
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.result-display {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--galactic-purple);
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.3);
+}
+
+#resultValue {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.unit {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+}
+
+#planetNameDisplay {
+    margin-top: 5px;
+    font-size: 0.7rem;
+    color: var(--neon-blue);
+}
+
+/* Booking Section */
+.booking-section {
+    margin-bottom: 60px;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 16px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-white);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 12px;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--neon-blue);
+    outline: none;
+}
+
+/* Professional Footer */
+.footer-section {
+    background: linear-gradient(to top, #000000 0%, #0a0a12 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 80px 0 30px;
+    margin-top: 80px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.footer-col h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--neon-blue);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-col ul li a:hover {
+    color: var(--neon-blue);
+    transform: translateX(5px);
+}
+
+/* Brand Column */
+.footer-motto {
+    color: var(--text-gray);
+    margin: 20px 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 300px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.social-icons a:hover {
+    background: var(--neon-blue);
+    color: black;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+}
+
+/* Newsletter */
+.newsletter-form {
+    position: relative;
+    margin-top: 20px;
+}
+
+.newsletter-form input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    color: white;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.newsletter-form input:focus {
+    border-color: var(--neon-blue);
+}
+
+.newsletter-form button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--neon-blue);
+    color: black;
+    cursor: pointer;
+    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-form button:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
+    text-align: center;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* Responsive Footer */
+@media (max-width: 968px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .newsletter-form button {
+        right: 0;
+    }
+}
+
+/* Global Polish & Tweaks */
+
+
+/* Enhanced Card Hover */
+.card {
+    position: relative;
+    z-index: 1;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--neon-blue), transparent, var(--galactic-purple));
+    z-index: -1;
+    border-radius: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.section-title span.highlight {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title span.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+
+
+.section-title:hover span.highlight::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Mission Control & Holo-Pass Styles */
+.mission-control-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.config-panel {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+}
+
+.config-panel h3 {
+    margin-bottom: 25px;
+    color: var(--neon-blue);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+}
+
+.config-group {
+    margin-bottom: 25px;
+}
+
+.config-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.option-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.option-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.option-card input {
+    position: absolute;
+    opacity: 0;
+}
+
+.opt-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.opt-content i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.option-card input:checked+.opt-content {
+    background: rgba(0, 242, 255, 0.1);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+.option-card input:checked+.opt-content i,
+.option-card input:checked+.opt-content span {
+    color: var(--neon-blue);
+}
+
+/* 3D Ticket Area */
+.ticket-preview-area {
+    perspective: 1000px;
+    /* Essential for 3D effect */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 320px;
+}
+
+.holo-ticket {
+    width: 350px;
+    height: 550px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+    /* Smooth follow */
+    border-radius: 20px;
+    background: rgba(10, 10, 20, 0.85);
+    /* Dark base */
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    user-select: none;
+}
+
+/* Hologram Overlay - shimmering effect */
+.hologram-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(0, 242, 255, 0.05) 25%,
+            rgba(188, 19, 254, 0.05) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    z-index: 5;
+    pointer-events: none;
+    background-size: 200% 200%;
+    animation: holoShimmer 5s infinite linear;
+}
+
+@keyframes holoShimmer {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.ticket-content {
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: var(--font-heading);
+    z-index: 2;
+    position: relative;
+    /* Glassy texture on ticket itself */
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+');
+}
+
+.ticket-header {
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-small {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--neon-blue);
+}
+
+.ticket-type {
+    font-size: 0.6rem;
+    background: white;
+    color: black;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.ticket-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.data-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-group.right {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.label {
+    font-size: 0.65rem;
+    color: var(--text-gray);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.value {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.big-row {
+    margin: 30px 0;
+    align-items: center;
+}
+
+.large-value {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+}
+
+.icon-plane i {
+    font-size: 1.5rem;
+    color: var(--galactic-purple);
+    transform: rotate(45deg);
+}
+
+.highlight-text {
+    color: var(--galactic-purple);
+    font-weight: bold;
+}
+
+.ticket-footer {
+    margin-top: auto;
+    border-top: 2px dashed rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.barcode {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    letter-spacing: -2px;
+    opacity: 0.7;
+    transform: scaleY(1.5);
+}
+
+.serial {
+    font-size: 0.7rem;
+    font-family: monospace;
+    color: var(--text-gray);
+}
+
+.preview-hint {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    opacity: 0.7;
+}
+
+/* Responsiveness for Config */
+@media (max-width: 768px) {
+    .mission-control-wrapper {
+        flex-direction: column;
+    }
+
+    .holo-ticket {
+        width: 300px;
+        height: 480px;
+    }
+}
